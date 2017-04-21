@@ -1,8 +1,10 @@
 package demo
 
+import grails.compiler.GrailsCompileStatic
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 
+@GrailsCompileStatic
 @EqualsAndHashCode(includes='entry')
 @ToString(includes='entry', includeNames=true, includePackage=false)
 class RoleHierarchyEntry implements Serializable {

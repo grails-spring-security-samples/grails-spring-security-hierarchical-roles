@@ -1,10 +1,11 @@
 package demo
 
+import grails.compiler.GrailsCompileStatic
 import grails.gorm.DetachedCriteria
+import org.apache.commons.lang.builder.HashCodeBuilder
 import groovy.transform.ToString
 
-import org.apache.commons.lang.builder.HashCodeBuilder
-
+@GrailsCompileStatic
 @ToString(cache=true, includeNames=true, includePackage=false)
 class UserRole implements Serializable {
 
@@ -51,16 +52,16 @@ class UserRole implements Serializable {
 
 	static boolean remove(User u, Role r) {
 		if (u != null && r != null) {
-			UserRole.where { user == u && role == r }.deleteAll()
+			UserRole.where { user == u && role == r }.deleteAll() as int
 		}
 	}
 
 	static int removeAll(User u) {
-		u == null ? 0 : UserRole.where { user == u }.deleteAll()
+		u == null ? 0 : UserRole.where { user == u }.deleteAll() as int
 	}
 
 	static int removeAll(Role r) {
-		r == null ? 0 : UserRole.where { role == r }.deleteAll()
+		r == null ? 0 : UserRole.where { role == r }.deleteAll() as int
 	}
 
 	static constraints = {
