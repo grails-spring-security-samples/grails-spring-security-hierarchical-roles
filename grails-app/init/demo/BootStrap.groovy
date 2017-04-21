@@ -1,4 +1,4 @@
-package grails.spring.security.hierarchical.roles
+package demo
 
 class BootStrap {
 

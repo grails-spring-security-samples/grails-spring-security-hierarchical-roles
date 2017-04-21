@@ -1,4 +1,4 @@
-package grails.spring.security.hierarchical.roles
+package demo
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
